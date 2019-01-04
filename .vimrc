@@ -32,3 +32,11 @@ highlight ColorColumn ctermbg=gray
 set colorcolumn=101
 
 set nowrap
+
+" no banner in netrw
+let g:netrw_banner = 0
+" open files from netrw in previous window
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 10
+
+set path+=**
