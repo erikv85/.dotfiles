@@ -1,3 +1,4 @@
+syntax on
 set cindent
 filetype plugin on
 filetype plugin indent on
