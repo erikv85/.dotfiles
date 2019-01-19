@@ -41,3 +41,7 @@ let g:netrw_browse_split = 4
 let g:netrw_winsize = 10
 
 set path+=**
+
+if filereadable(expand('~/.workvimrc'))
+        source ~/.workvimrc
+endif
