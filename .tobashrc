@@ -1,0 +1,11 @@
+# source me from ~/.bashrc
+
+export PS1='$(whoami)@${PWD/*\//}:~$ '
+
+alias ls="ls --color --group-directories-first"
+alias tmux="tmux new bash \; split-window -h\;"
+alias lynx='lynx --accept_all_cookies -vikeys'
+
+if [ -f ~/.workbashrc ]; then
+        source ~/.workbashrc
+fi
