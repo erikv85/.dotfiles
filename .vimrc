@@ -37,6 +37,8 @@ let g:netrw_winsize = 10
 
 set path+=**
 
+inoremap <Tab> <Esc>
+
 if filereadable(expand('~/.workvimrc'))
         source ~/.workvimrc
 endif
