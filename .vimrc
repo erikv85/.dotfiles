@@ -6,11 +6,6 @@ filetype plugin indent on
 "set shiftwidth=4
 set expandtab
 
-inoremap ö {
-inoremap ä }
-imap Ö [
-imap Ä ]
-
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
