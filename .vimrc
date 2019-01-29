@@ -2,9 +2,11 @@ syntax on
 set cindent
 filetype plugin on
 filetype plugin indent on
-"set tabstop=4
-"set shiftwidth=4
 set expandtab
+
+" FIXME: only when java
+set tabstop=4
+set shiftwidth=4
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
