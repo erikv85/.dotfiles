@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pwd=$(realpath $0)
+pwd=$(dirname $(realpath $0))
 
 if ! grep -q tobashrc $HOME/.bashrc; then
     echo -e "\nsource $pwd/.tobashrc" | tee -a $HOME/.bashrc
