@@ -1,12 +1,12 @@
 #!/bin/bash
 
-pwd=$(dirname $(realpath $0))
+cwd=$(dirname $(realpath $0))
 
 if ! grep -q tobashrc $HOME/.bashrc; then
-    echo -e "\nsource $pwd/.tobashrc" >> $HOME/.bashrc
-    echo "$HOME/.bashrc now sources $pwd/.tobashrc"
+    echo -e "\nsource $cwd/.tobashrc" >> $HOME/.bashrc
+    echo "$HOME/.bashrc now sources $cwd/.tobashrc"
 fi
 
-ln -sv $pwd/.vimrc $HOME/.vimrc
+ln -sv $cwd/.vimrc $HOME/.vimrc
 
-ln -sv $pwd/.tmux.conf $HOME/.tmux.conf
+ln -sv $cwd/.tmux.conf $HOME/.tmux.conf
