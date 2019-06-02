@@ -1,3 +1,4 @@
+execute pathogen#infect()
 syntax on
 set cindent
 filetype plugin on
