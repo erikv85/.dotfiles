@@ -3,8 +3,7 @@
 cwd=$(dirname $(realpath $0))
 
 if ! grep -q tobashrc $HOME/.bashrc; then
-    echo -e "\nsource $cwd/.tobashrc" >> $HOME/.bashrc
-    echo "$HOME/.bashrc now sources $cwd/.tobashrc"
+    echo -e "\nsource $cwd/.tobashrc" | tee -a $HOME/.bashrc
 fi
 
 ln -sv $cwd/.vimrc $HOME/.vimrc
@@ -12,5 +11,11 @@ ln -sv $cwd/.vimrc $HOME/.vimrc
 ln -sv $cwd/.tmux.conf $HOME/.tmux.conf
 
 # TODO: this should only be done for work laptop, and in a different way altogether
-echo -e "\nset background=dark" >> $HOME/.vimrc
-echo -e "\nset -g default-terminal \"screen-256color\"" >> $HOME/.tmux.conf
+if ! grep -q "set background=dark" $HOME/.vimrc; then
+    echo -e "\nset background=dark" | tee -a $HOME/.vimrc
+fi
+if ! grep -q "set.*default-terminal.*screen-256color" $HOME/.tmux.conf; then
+    echo -e "\nset -g default-terminal \"screen-256color\"" | tee -a $HOME/.tmux.conf
+fi
+
+# TODO: pathogen stuff? gruvbox stuff?
