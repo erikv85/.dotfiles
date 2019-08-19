@@ -51,3 +51,9 @@ endif
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "colorscheme gruvbox
 set background=dark
+
+" Backspace stopped working properly when
+" I uninstalled Ubuntu's vim (vim-tiny?)
+" and installed vim from src
+" TODO: what does this actually do?
+set backspace=2
