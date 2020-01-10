@@ -57,3 +57,5 @@ set background=dark
 " and installed vim from src
 " TODO: what does this actually do?
 set backspace=2
+
+set ruler
