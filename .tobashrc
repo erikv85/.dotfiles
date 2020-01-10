@@ -12,3 +12,6 @@ fi
 if [ -f ~/.workbashrc ]; then
         source ~/.workbashrc
 fi
+
+export VISUAL=vim
+export EDITOR=vim
