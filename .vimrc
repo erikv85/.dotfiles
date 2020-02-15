@@ -62,4 +62,4 @@ set ruler
 
 " Calculate expression in yank register
 " TODO: misc tweaking, like what key and reg to use
-nnoremap == i<C-R>=<C-R>+<ESC>
+nnoremap == i<C-R>=<C-R>+<CR><ESC>
