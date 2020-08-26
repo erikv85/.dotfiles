@@ -1,0 +1,12 @@
+# Misc sneaky settings, gui stuff or things I don't know how or care to
+# automate in some script.
+
+########################################################################
+# Ubuntu 18.04
+########################################################################
+
+# Don't group instances of same program when alt+tab
+# (source: https://askubuntu.com/a/1119120)
+  Settings -> Devices -> Keyboard
+  Find 'Switch windows'
+  Enter Alt+Tab as shortcut
