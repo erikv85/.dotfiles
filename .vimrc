@@ -60,6 +60,10 @@ set backspace=2
 
 set ruler
 
-" Calculate expression in yank register
+" Calculate expression in line.
+" Example: line equals (w/o apostrophes)
+" '   1+  1  '
+" Then this macro would transform the line to (w/o apostrophes)
+" '   1+  1   2'
 " TODO: misc tweaking, like what key and reg to use
-nnoremap == i<C-R>=<C-R>+<CR><ESC>
+nnoremap == 0y$A <C-R>=<C-R>+<CR><ESC>
