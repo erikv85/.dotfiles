@@ -10,3 +10,12 @@
   Settings -> Devices -> Keyboard
   Find 'Switch windows'
   Enter Alt+Tab as shortcut
+
+# Install Chrome Web Store's shortkeys in Brave
+# extension link: https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck?page=1&hl=sv&itemlang=ml
+  In Brave,
+    go to brave://extensions
+    Click 'Load unpacked'
+    Select and open the directory whose name is something like this:
+      ~/.config/google-chrome/Default/Extensions/logpjaa.../3.0.7_0
+    Done
