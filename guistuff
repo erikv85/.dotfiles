@@ -18,4 +18,66 @@
     Click 'Load unpacked'
     Select and open the directory whose name is something like this:
       ~/.config/google-chrome/Default/Extensions/logpjaa.../3.0.7_0
-    Done
+    Done. Then import this json:
+
+    [ { "action": "scrolldown",
+        "blacklist": false,
+        "exported": true,
+        "key": "j",
+        "open": false,
+        "sites": "*mail.google.com*",
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+      },
+      { "action": "scrollup",
+        "blacklist": false,
+        "exported": true,
+        "key": "k",
+        "open": false,
+        "sites": "*mail.google.com*",
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+      },
+      { "action": "pagedown",
+        "blacklist": false,
+        "exported": true,
+        "key": "d",
+        "open": false,
+        "sites": "*mail.google.com*",
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+      },
+      { "action": "pageup",
+        "blacklist": false,
+        "exported": true,
+        "key": "u",
+        "open": false,
+        "sites": "*mail.google.com*",
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+      },
+      { "action": "top",
+        "blacklist": false,
+        "exported": true,
+        "key": "g",
+        "open": false,
+        "sites": "*mail.google.com*",
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+      },
+      { "action": "bottom",
+        "blacklist": false,
+        "exported": true,
+        "key": "$",
+        "open": false,
+        "sites": "*mail.google.com*",
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+      }
+    ]
