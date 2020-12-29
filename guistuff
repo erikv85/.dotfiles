@@ -2,6 +2,16 @@
 # automate in some script.
 
 ########################################################################
+# Ubuntu 20.04
+########################################################################
+
+# Remap capslock to ctrl
+sudo apt install -y gnome-tweaks
+  Open gnome-tweaks -> Keyboard & Mouse -> Additional Layout Options
+  -> Caps Lock behavior -> "Caps Lock is also a Ctrl"
+
+
+########################################################################
 # Ubuntu 18.04
 ########################################################################
 
