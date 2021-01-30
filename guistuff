@@ -10,6 +10,10 @@ sudo apt install -y gnome-tweaks
   Open gnome-tweaks -> Keyboard & Mouse -> Additional Layout Options
   -> Caps Lock behavior -> "Caps Lock is also a Ctrl"
 
+# Remove dock (panel on the left with program shortcuts)
+sudo apt install -y gnome-shell-extensions
+  Open extensions -> disable "Ubuntu Dock"
+
 
 ########################################################################
 # Ubuntu 18.04
