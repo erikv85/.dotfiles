@@ -5,6 +5,12 @@
 # Ubuntu 20.04
 ########################################################################
 
+# Remove pop-ups about "System program problem detected"
+# edit /etc/default/apport from enabled=1 to enabled=0, i.e.
+sed -i 's/(enabled=)1/\10/etc/default/apport
+# might also want to clear existing reports:
+rm /var/crash/*
+
 # Remap capslock to ctrl
 sudo apt install -y gnome-tweaks
   Open gnome-tweaks -> Keyboard & Mouse -> Additional Layout Options
