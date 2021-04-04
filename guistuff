@@ -6,12 +6,12 @@
 ########################################################################
 
 # Remove software update pop-up
-sudo apt remove ubuntu-notifier
+sudo apt remove update-notifier
 # This will also remove ubuntu-desktop, which looks scary but is safe
 
 # Remove pop-ups about "System program problem detected"
 # edit /etc/default/apport from enabled=1 to enabled=0, i.e.
-sed -i 's/(enabled=)1/\10/g' /etc/default/apport
+sed -i 's/\(enabled=\)1/\10/g' /etc/default/apport
 # might also want to clear existing reports:
 rm /var/crash/*
 
