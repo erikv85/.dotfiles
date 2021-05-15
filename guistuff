@@ -5,6 +5,10 @@
 # Ubuntu 20.04
 ########################################################################
 
+# 'sh' should point to bash, not dash
+sudo dpkg-reconfigure dash
+# then choose not to use dash
+
 # Remove software update pop-up
 sudo apt remove update-notifier
 # This will also remove ubuntu-desktop, which looks scary but is safe
