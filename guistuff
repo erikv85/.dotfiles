@@ -5,6 +5,10 @@
 # Ubuntu 20.04
 ########################################################################
 
+# Not gui-specific, but:
+# Continuously resize tmux pane, e.g. "down"
+^B Alt <arrow down> <arrow down> <arrow down>
+
 # 'sh' should point to bash, not dash
 sudo dpkg-reconfigure dash
 # then choose not to use dash
