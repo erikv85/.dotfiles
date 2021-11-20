@@ -10,8 +10,12 @@ if lsb_release -i | grep -q "Ubuntu"; then
 fi
 
 if [ -f ~/.workbashrc ]; then
-        source ~/.workbashrc
+    source ~/.workbashrc
 fi
 
 export VISUAL=vim
 export EDITOR=vim
+
+if [ -f ~/.maven_bash_completion ]; then
+    source ~/.maven_bash_completion.bash
+fi
