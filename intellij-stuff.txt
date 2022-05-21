@@ -1,0 +1,10 @@
+# intellij is a bloated program that's convenient for quick imports and debugging...
+
+# How to set up projects so you don't need one intellij window per repo:
+#
+# Suppose you have a dir D with two repos p,r. Do
+# 1. File -> New -> New Project -> Empty project -> enter D and its path
+# 2. File -> New -> Module from existing sources -> choose repo
+#      -> Import module from external model
+#
+# That's it. (Tested with 2021.2.3 Community Edition)
