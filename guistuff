@@ -5,6 +5,9 @@
 # Ubuntu 20.04
 ########################################################################
 
+# Might have to disable "natural scrolling":
+# Settings -> Mouse & Touchpad -> toggle off 'Natural scrolling' as desired
+
 # Not gui-specific, but:
 # Continuously resize tmux pane, e.g. "down"
 ^B Alt <arrow down> <arrow down> <arrow down>

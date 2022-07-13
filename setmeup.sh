@@ -18,4 +18,8 @@ if ! grep -q "set.*default-terminal.*screen-256color" $HOME/.tmux.conf; then
     echo -e "\nset -g default-terminal \"screen-256color\"" | tee -a $HOME/.tmux.conf
 fi
 
-# TODO: pathogen stuff? gruvbox stuff?
+if grep -sq 'NAME="Ubuntu"' /etc/os-release && [ -f install.sh ]; then
+    bash install.sh
+else
+    echo "OS is not Ubuntu so skipping program installations"
+fi
