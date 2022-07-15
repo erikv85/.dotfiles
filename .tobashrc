@@ -16,6 +16,6 @@ fi
 export VISUAL=vim
 export EDITOR=vim
 
-if [ -f ~/.maven_bash_completion ]; then
+if [ -f ~/.maven_bash_completion.bash ]; then
     source ~/.maven_bash_completion.bash
 fi
