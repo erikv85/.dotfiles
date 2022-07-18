@@ -7,6 +7,7 @@ if ! grep -q tobashrc $HOME/.bashrc; then
 fi
 
 ln -sv $cwd/.vimrc $HOME/.vimrc
+lm -sv $HOME/.vimrc $HOME/.ideavimrc
 
 ln -sv $cwd/.tmux.conf $HOME/.tmux.conf
 
