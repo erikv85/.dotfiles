@@ -1,6 +1,6 @@
 # source me from ~/.bashrc
 
-export PS1='$(whoami)@${PWD/*\//}:~$ '
+export PS1='$(whoami)@${PWD/*\//}$ '
 
 alias ls="ls --color --group-directories-first"
 alias tmux="tmux new bash \; split-window -h\;"
