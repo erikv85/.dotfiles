@@ -6,3 +6,5 @@ sudo apt install -y \
     tmux \
     htop \
     tree \
+    gnome-tweaks \
+    gnome-shell-extensions \
