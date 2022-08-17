@@ -7,7 +7,9 @@ if ! grep -q tobashrc $HOME/.bashrc; then
 fi
 
 ln -sv $cwd/.vimrc $HOME/.vimrc
-ln -sv $HOME/.vimrc $HOME/.ideavimrc
+cp $cwd/.vimrc $HOME/.ideavimrc
+# Disable intellij bell
+echo "set visualbell" >> $HOME/.ideavimrc
 
 ln -sv $cwd/.tmux.conf $HOME/.tmux.conf
 
