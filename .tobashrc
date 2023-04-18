@@ -19,3 +19,20 @@ export EDITOR=vim
 if [ -f ~/.maven_bash_completion.bash ]; then
     source ~/.maven_bash_completion.bash
 fi
+
+alias gs="git status"
+
+################################################################################
+# Some settings to handle tmux history
+################################################################################
+
+# avoid duplicates
+export HISTCONTROL=ignoredups:erasedups
+
+# append history entries..
+shopt -s histappend
+#
+# # After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+################################################################################
