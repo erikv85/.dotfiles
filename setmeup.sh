@@ -23,6 +23,7 @@ fi
 
 if grep -sq 'NAME="Ubuntu"' /etc/os-release && [ -f install.sh ]; then
     bash install.sh
+    bash other-installs.sh
 else
     echo "OS is not Ubuntu so skipping program installations"
 fi
