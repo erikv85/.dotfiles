@@ -40,6 +40,7 @@ let g:netrw_winsize = 10
 
 set path+=**
 set wildignore+=**/node_modules/**
+set wildignore+=**/*.class
 
 inoremap <Tab> <Esc>
 
