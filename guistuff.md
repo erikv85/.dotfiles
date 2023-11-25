@@ -54,13 +54,14 @@ Don't group instances of same program when alt+tab ([source](https://askubuntu.c
 
 Install Chrome Web Store's shortkeys in Brave
 ([extension link](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck?page=1&hl=sv&itemlang=ml))
-  In Brave,
-    go to brave://extensions
-    Enable 'Developer mode'
-    Click 'Load unpacked'
-    Select and open the directory whose name is something like this:
-      ~/.config/google-chrome/Default/Extensions/logpjaa.../3.0.7_0
-    Done. Then import this json:
+
+In Brave,
+    - go to `brave://extensions`
+    - Enable `Developer mode`
+    - Click `Load unpacked`
+    - Select and open the directory whose name is something like this:
+      `~/.config/google-chrome/Default/Extensions/logpjaa.../3.0.7_0`
+    - Done. Then import this json:
 
 ```json
     [ {
