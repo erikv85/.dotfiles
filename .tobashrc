@@ -45,6 +45,8 @@ alias scala-spring-archetype="mvn archetype:generate -DarchetypeGroupId=io.githu
 # TODO: explain this command
 alias node='node -r repl -e "repl.start()"'
 
+alias xclip='xclip -selection clipboard'
+
 function gedit {
     /usr/bin/gedit "$1" & >/dev/null 2>&1
     disown $!
