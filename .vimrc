@@ -47,9 +47,8 @@ if filereadable(expand('~/.workvimrc'))
         source ~/.workvimrc
 endif
 
-" Backspace stopped working properly when
-" I uninstalled Ubuntu's vim (vim-tiny?)
-" and installed vim from src
+" Backspace stopped working properly when I uninstalled Ubuntu's vim
+" (vim-tiny?) and installed vim from src
 " TODO: what does this actually do?
 set backspace=2
 
