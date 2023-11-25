@@ -1,8 +1,10 @@
-# How to monitor traffic to/from app (2023-11-25)
+# Things learned or what to learn
+
+## How to monitor traffic to/from app (2023-11-25)
 
 Use `sudo strace -f -e trace=network -s 10000 -p <pid>`
 
-## Example
+### Example
 
 ```python
 # install flask with 'pip install Flask'
@@ -22,6 +24,6 @@ above and we'll see
 [pid <pid>] sendto(5, "GET / HTTP/1.1\r\nHost: 142.250.74.35\r\nUser-Agent: python-requests/2.25.1 ...
 ```
 
-# Create new repo from cmdline (unknown date)
+## Create new repo from cmdline (unknown date)
 
 TBD
