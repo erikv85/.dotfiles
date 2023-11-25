@@ -21,6 +21,7 @@ if [ -f ~/.maven_bash_completion.bash ]; then
 fi
 
 alias gs="git status"
+alias gd="git diff"
 
 ################################################################################
 # Some settings to handle tmux history
@@ -36,3 +37,5 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 ################################################################################
+
+alias node='node -r repl -e "repl.start()"'
