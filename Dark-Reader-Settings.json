@@ -1,0 +1,69 @@
+{
+    "schemeVersion": 2,
+    "enabled": false,
+    "fetchNews": true,
+    "theme": {
+        "mode": 1,
+        "brightness": 100,
+        "contrast": 100,
+        "grayscale": 0,
+        "sepia": 0,
+        "useFont": false,
+        "fontFamily": "Open Sans",
+        "textStroke": 0,
+        "engine": "dynamicTheme",
+        "stylesheet": "",
+        "darkSchemeBackgroundColor": "#181a1b",
+        "darkSchemeTextColor": "#e8e6e3",
+        "lightSchemeBackgroundColor": "#dcdad7",
+        "lightSchemeTextColor": "#181a1b",
+        "scrollbarColor": "auto",
+        "selectionColor": "auto",
+        "styleSystemControls": false,
+        "lightColorScheme": "Default",
+        "darkColorScheme": "Default",
+        "immediateModify": false
+    },
+    "presets": [],
+    "customThemes": [],
+    "enabledByDefault": true,
+    "enabledFor": [],
+    "disabledFor": [
+        "docs.google.com",
+        "localhost:3000",
+        "mail.google.com",
+        "portal.zervicepoint.com",
+        "visma.1password.eu",
+        "www.snusbolaget.se",
+        "www.compricer.se",
+        "www.handelsbanken.se",
+        "github.com"
+    ],
+    "changeBrowserTheme": false,
+    "syncSettings": true,
+    "syncSitesFixes": false,
+    "automation": {
+        "behavior": "OnOff",
+        "enabled": true,
+        "mode": "location"
+    },
+    "time": {
+        "activation": "18:00",
+        "deactivation": "9:00"
+    },
+    "location": {
+        "latitude": 55.59,
+        "longitude": 13
+    },
+    "previewNewDesign": true,
+    "enableForPDF": true,
+    "enableForProtectedPages": false,
+    "enableContextMenus": false,
+    "detectDarkTheme": false,
+    "displayedNews": [
+        "filter-mode"
+    ],
+    "readNews": [
+        "news-2023"
+    ]
+}
