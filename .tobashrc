@@ -37,6 +37,10 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 ################################################################################
+# Various aliases and such
+################################################################################
+
+alias scala-spring-archetype="mvn archetype:generate -DarchetypeGroupId=io.github -DarchetypeArtifactId=scala-spring-archetype -DarchetypeVersion=1.0-SNAPSHOT"
 
 # TODO: explain this command
 alias node='node -r repl -e "repl.start()"'
