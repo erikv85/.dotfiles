@@ -69,3 +69,6 @@ set ruler
 " '   1+  1   2'
 " TODO: misc tweaking, like what key and reg to use
 nnoremap == 0y$A <C-R>=<C-R>+<CR><ESC>
+
+" autocomplete in python can be slow
+set complete-=i
