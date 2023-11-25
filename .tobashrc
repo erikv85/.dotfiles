@@ -38,4 +38,10 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 ################################################################################
 
+# TODO: explain this command
 alias node='node -r repl -e "repl.start()"'
+
+function gedit {
+    /usr/bin/gedit "$1" & >/dev/null 2>&1
+    disown $!
+}
