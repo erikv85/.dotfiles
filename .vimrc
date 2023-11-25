@@ -1,4 +1,3 @@
-"execute pathogen#infect()
 syntax on
 set cindent
 filetype plugin on
@@ -48,10 +47,6 @@ if filereadable(expand('~/.workvimrc'))
         source ~/.workvimrc
 endif
 
-"set termguicolors
-"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"colorscheme gruvbox
 set background=dark
 
 " Backspace stopped working properly when
