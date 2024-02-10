@@ -1,6 +1,8 @@
 # source me from ~/.bashrc
 
-export PS1='$(whoami)@${PWD/*\//}$ '
+who=$(whoami)
+user=$(if [[ $who = "erik" ]]; then echo "me"; else echo $who; fi)
+export PS1='$user@${PWD/*\//}$ '
 
 alias ls="ls --color --group-directories-first"
 alias tmux="tmux new bash \; split-window -h\;"
