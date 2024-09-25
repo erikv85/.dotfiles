@@ -24,6 +24,7 @@ fi
 
 alias gs="git status"
 alias gd="git diff"
+alias gau="git add -u"
 
 ################################################################################
 # Some settings to handle tmux history
