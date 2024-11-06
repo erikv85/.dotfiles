@@ -25,6 +25,8 @@ fi
 alias gs="git status"
 alias gd="git diff"
 alias gau="git add -u"
+alias gp="git pull"
+alias gpush="git push"
 
 ################################################################################
 # Some settings to handle tmux history
@@ -54,3 +56,5 @@ function gedit {
     /usr/bin/gedit "$1" & >/dev/null 2>&1
     disown $!
 }
+
+alias l1='ls -1'
