@@ -25,19 +25,172 @@
         "immediateModify": false
     },
     "presets": [],
-    "customThemes": [],
+    "customThemes": [
+        {
+            "builtIn": true,
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "svgFilter",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            },
+            "url": [
+                "*.officeapps.live.com"
+            ]
+        },
+        {
+            "builtIn": true,
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "svgFilter",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            },
+            "url": [
+                "*.sharepoint.com"
+            ]
+        },
+        {
+            "builtIn": true,
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "svgFilter",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            },
+            "url": [
+                "docs.google.com"
+            ]
+        },
+        {
+            "builtIn": true,
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "svgFilter",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            },
+            "url": [
+                "onedrive.live.com"
+            ]
+        }
+    ],
     "enabledByDefault": true,
     "enabledFor": [],
     "disabledFor": [
-        "docs.google.com",
         "localhost:3000",
-        "mail.google.com",
         "portal.zervicepoint.com",
         "visma.1password.eu",
         "www.snusbolaget.se",
         "www.compricer.se",
         "www.handelsbanken.se",
-        "github.com"
+        "app.slack.com",
+        "visma.slack.com",
+        "app.diagrams.net",
+        "miro.com",
+        "hub.docker.com",
+        "staging-batman.speedledger.net",
+        "secure.speedledger.com",
+        "app.codacy.com",
+        "mermaid.live",
+        "www7.skatteverket.se",
+        "staging-storm.speedledger.net",
+        "editor.swagger.io",
+        "docs.google.com",
+        "www.avanza.se",
+        "www.momondo.se",
+        "es-production.speedledger.net",
+        "www.javadoc.io",
+        "app.datadoghq.eu",
+        "script.google.com",
+        "www.google.com",
+        "ctan.org",
+        "www.oresunddirekt.se",
+        "idpx.forsakringskassan.se",
+        "docs.scala-lang.org",
+        "spring.io",
+        "docs.openpayments.io",
+        "github.com",
+        "localhost:7000",
+        "regexr.com",
+        "www.mapchart.net",
+        "dev.maxmind.com",
+        "mail.google.com",
+        "corporate.norwegian.com",
+        "eu-west-1.console.aws.amazon.com",
+        "docs.aws.amazon.com",
+        "circleci.com",
+        "vault.bitwarden.com",
+        "us-east-1.console.aws.amazon.com",
+        "lightsail.aws.amazon.com",
+        "eu-north-1.console.aws.amazon.com",
+        "eu-north-1.signin.aws",
+        "jira.visma.com",
+        "www.sj.se"
     ],
     "changeBrowserTheme": false,
     "syncSettings": true,
@@ -56,13 +209,19 @@
         "longitude": 13
     },
     "previewNewDesign": true,
-    "enableForPDF": true,
+    "previewNewestDesign": false,
+    "enableForPDF": false,
     "enableForProtectedPages": false,
     "enableContextMenus": false,
     "detectDarkTheme": false,
     "displayedNews": [
         "filter-mode"
     ],
+    "installation": {
+        "date": 1726214918513,
+        "reason": "update",
+        "version": "4.9.88"
+    },
     "readNews": [
         "news-2023"
     ]
