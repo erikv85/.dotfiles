@@ -1,0 +1,17 @@
+---
+- hosts: all
+
+  tasks:
+    - name: Install sdkman
+      ansible.builtin.shell: |
+        curl -s "https://get.sdkman.io" | bash
+
+    # If this does not work due to problems with python-apt,
+    # use -e ansible_python_interpreter=/usr/bin/python3
+    - name: Install apt packages
+      become: yes
+      become_method: sudo
+      apt:
+        pkg:
+          - jq
+          - python-is-python3
