@@ -3,6 +3,8 @@
 
   tasks:
     - name: Install sdkman
+      args:
+        warn: false # otherwise will warn against using curl
       ansible.builtin.shell: |
         curl -s "https://get.sdkman.io" | bash
 
