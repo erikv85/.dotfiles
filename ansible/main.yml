@@ -8,6 +8,13 @@
       ansible.builtin.shell: |
         curl -s "https://get.sdkman.io" | bash
 
+    - name: Add vim repository
+      become: yes
+      become_method: sudo
+      ansible.builtin.apt_repository:
+        repo: ppa:jonathonf/vim
+        state: present
+
     # If this does not work due to problems with python-apt,
     # use -e ansible_python_interpreter=/usr/bin/python3
     - name: Install apt packages
@@ -15,5 +22,11 @@
       become_method: sudo
       apt:
         pkg:
+          - tmux
+          - htop
+          - tree
           - jq
           - python-is-python3
+          - gnome-tweaks
+          - gnome-shell-extensions
+            # TODO: add vim. need to condition this on vim repo successfully added
