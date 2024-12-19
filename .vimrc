@@ -42,6 +42,8 @@ set wildignore+=**/node_modules/**
 set wildignore+=**/*.class
 
 inoremap <Tab> <Esc>
+" useful mapping when writing in swedish
+noremap Ö :
 
 if filereadable(expand('~/.workvimrc'))
         source ~/.workvimrc
