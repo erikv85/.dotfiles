@@ -69,3 +69,6 @@ function obsidian {
     /usr/bin/obsidian & >/dev/null 2>&1
     disown $!
 }
+
+# this is to make sure english is used by git, vim, etc...
+export LANG=en_US.UTF-8
