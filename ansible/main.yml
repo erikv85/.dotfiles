@@ -9,12 +9,13 @@
       ansible.builtin.shell: |
         curl -s "https://get.sdkman.io" | bash
 
-    - name: Add vim repository
-      become: yes
-      become_method: sudo
-      ansible.builtin.apt_repository:
-        repo: ppa:jonathonf/vim
-        state: present
+    # rip jonathonf
+    #- name: Add vim repository
+    #  become: yes
+    #  become_method: sudo
+    #  ansible.builtin.apt_repository:
+    #    repo: ppa:jonathonf/vim
+    #    state: present
 
     # If this does not work due to problems with python-apt,
     # use -e ansible_python_interpreter=/usr/bin/python3
