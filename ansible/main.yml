@@ -81,3 +81,10 @@
     #  ansible.builtin.apt_repository:
     #    repo: ppa:jonathonf/vim
     #    state: present
+
+    # TODO:
+    # install java and scala
+    # nvm
+    # set up git
+    # set up gh (github cli)
+    # install intellij
