@@ -2,6 +2,19 @@
 - hosts:
     - '127.0.0.1'
 
+  vars:
+    apt_packages:
+      - curl
+      - zip
+      - tmux
+      - htop
+      - tree
+      - jq
+      - python-is-python3
+      - gnome-tweaks
+      - gnome-shell-extensions
+      - vim
+
   tasks:
     # If this does not work due to problems with python-apt,
     # use -e ansible_python_interpreter=/usr/bin/python3
@@ -9,17 +22,7 @@
       become: yes
       become_method: sudo
       apt:
-        pkg:
-          - curl
-          - zip
-          - tmux
-          - htop
-          - tree
-          - jq
-          - python-is-python3
-          - gnome-tweaks
-          - gnome-shell-extensions
-            # TODO: add vim. need to condition this on vim repo successfully added
+        pkg: "{{ apt_packages }}"
 
     - name: Link vimrc
       args:
