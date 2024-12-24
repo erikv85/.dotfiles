@@ -9,7 +9,6 @@
         creates: $HOME/.vimrc
       ansible.builtin.shell: |
         ln -sv `pwd`/.vimrc $HOME/.vimrc
-        readlink -f $HOME/.vimrc
 
     - name: Install sdkman
       args:
