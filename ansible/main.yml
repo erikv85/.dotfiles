@@ -10,6 +10,8 @@
       become_method: sudo
       apt:
         pkg:
+          - curl
+          - zip
           - tmux
           - htop
           - tree

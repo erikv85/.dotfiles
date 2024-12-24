@@ -3,8 +3,6 @@ FROM ubuntu:24.04
 RUN apt update
 RUN apt install -y \
         sudo \
-        curl \
-        zip \
         ansible
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
