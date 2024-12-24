@@ -16,4 +16,4 @@ WORKDIR /home/ubuntu
 
 ADD --chown=ubuntu:ubuntu . /home/ubuntu/.dotfiles
 
-RUN ansible-playbook .dotfiles/ansible/main.yml -K
+RUN cd .dotfiles && bash setmeup.sh
