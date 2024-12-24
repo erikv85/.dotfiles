@@ -21,9 +21,5 @@ if ! grep -q "set.*default-terminal.*screen-256color" $HOME/.tmux.conf; then
     echo -e "\nset -g default-terminal \"screen-256color\"" | tee -a $HOME/.tmux.conf
 fi
 
-if grep -sq 'NAME="Ubuntu"' /etc/os-release && [ -f install.sh ]; then
-    bash install.sh
-    bash other-installs.sh
-else
-    echo "OS is not Ubuntu so skipping program installations"
-fi
+sudo apt install -y ansible
+ansible-playbook ansible/main.yml -K
