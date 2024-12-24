@@ -1,5 +1,11 @@
 #!/bin/bash
 
+wd=$(basename `pwd`)
+if [[ $wd != ".dotfiles" ]]; then
+    echo "Please run from .dotfiles directory"
+    exit 1
+fi
+
 cwd=$(dirname $(realpath $0))
 
 if ! grep -q tobashrc $HOME/.bashrc; then
