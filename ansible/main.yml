@@ -25,6 +25,12 @@
       ansible.builtin.shell: |
         ln -sv `pwd`/.tmux.conf $HOME/.tmux.conf
 
+    - name: Source tobashrc
+      ansible.builtin.lineinfile:
+        path: $HOME/.bashrc
+        line: source $HOME/.dotfiles/.tobashrc
+        state: present
+
     - name: Install sdkman
       args:
         warn: false # otherwise will warn against using curl
