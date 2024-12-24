@@ -18,6 +18,13 @@
         # Disable intellij bell
         echo "set visualbell" >> $HOME/.ideavimrc
 
+    - name: Link tmux conf
+      args:
+        chdir: ..
+        creates: $HOME/.tmux.conf
+      ansible.builtin.shell: |
+        ln -sv `pwd`/.tmux.conf $HOME/.tmux.conf
+
     - name: Install sdkman
       args:
         warn: false # otherwise will warn against using curl
