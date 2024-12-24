@@ -1,7 +1,6 @@
 #!/bin/bash
 
-wd=$(basename `pwd`)
-if [[ $wd != ".dotfiles" ]]; then
+if [[ $(basename `pwd`) != ".dotfiles" ]]; then
     echo "Please run from .dotfiles directory"
     exit 1
 fi
