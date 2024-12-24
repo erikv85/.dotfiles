@@ -58,6 +58,22 @@
       ansible.builtin.shell: |
         curl -s "https://get.sdkman.io" | bash
 
+    - name: Install sbt
+      args:
+        creates: $HOME/.sdkman/candidates/sbt/
+        executable: /bin/bash
+      ansible.builtin.shell: |
+        . ~/.sdkman/bin/sdkman-init.sh
+        sdk install sbt
+
+    - name: Install mvn
+      args:
+        creates: $HOME/.sdkman/candidates/maven/
+        executable: /bin/bash
+      ansible.builtin.shell: |
+        . ~/.sdkman/bin/sdkman-init.sh
+        sdk install maven 3.8.8
+
     # rip jonathonf
     #- name: Add vim repository
     #  become: yes
