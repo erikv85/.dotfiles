@@ -2,8 +2,7 @@ FROM ubuntu:24.04
 
 RUN apt update
 RUN apt install -y \
-        sudo \
-        ansible
+        sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # TODO: make an image that clones my .dotfiles repo and installs everything
