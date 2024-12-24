@@ -12,7 +12,6 @@ if ! grep -q tobashrc $HOME/.bashrc; then
     echo -e "\nsource $cwd/.tobashrc" | tee -a $HOME/.bashrc
 fi
 
-ln -sv $cwd/.vimrc $HOME/.vimrc
 cp $cwd/.vimrc $HOME/.ideavimrc
 # Disable intellij bell
 echo "set visualbell" >> $HOME/.ideavimrc

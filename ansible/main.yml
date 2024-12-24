@@ -3,6 +3,14 @@
     - '127.0.0.1'
 
   tasks:
+    - name: Link vimrc
+      args:
+        chdir: ..
+        creates: $HOME/.vimrc
+      ansible.builtin.shell: |
+        ln -sv `pwd`/.vimrc $HOME/.vimrc
+        readlink -f $HOME/.vimrc
+
     - name: Install sdkman
       args:
         warn: false # otherwise will warn against using curl

@@ -14,6 +14,6 @@ SHELL ["/bin/bash", "-c"]
 USER ubuntu
 WORKDIR /home/ubuntu
 
-COPY --chown=ubuntu:ubuntu ansible/main.yml /home/ubuntu
+ADD --chown=ubuntu:ubuntu . /home/ubuntu/.dotfiles
 
-RUN ansible-playbook main.yml -K
+RUN ansible-playbook .dotfiles/ansible/main.yml -K
