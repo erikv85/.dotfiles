@@ -12,10 +12,6 @@ if ! grep -q tobashrc $HOME/.bashrc; then
     echo -e "\nsource $cwd/.tobashrc" | tee -a $HOME/.bashrc
 fi
 
-cp $cwd/.vimrc $HOME/.ideavimrc
-# Disable intellij bell
-echo "set visualbell" >> $HOME/.ideavimrc
-
 ln -sv $cwd/.tmux.conf $HOME/.tmux.conf
 
 # TODO: this should only be done for work laptop, and in a different way altogether

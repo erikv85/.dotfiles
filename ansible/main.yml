@@ -10,6 +10,14 @@
       ansible.builtin.shell: |
         ln -sv `pwd`/.vimrc $HOME/.vimrc
 
+    - name: Create IDEA vimrc
+      args:
+        creates: $HOME/.ideavimrc
+      ansible.builtin.shell: |
+        cp $HOME/.dotfiles/.vimrc $HOME/.ideavimrc
+        # Disable intellij bell
+        echo "set visualbell" >> $HOME/.ideavimrc
+
     - name: Install sdkman
       args:
         warn: false # otherwise will warn against using curl
