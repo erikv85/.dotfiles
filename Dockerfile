@@ -5,8 +5,6 @@ RUN apt install -y \
         sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-# TODO: make an image that clones my .dotfiles repo and installs everything
-
 SHELL ["/bin/bash", "-c"]
 USER ubuntu
 WORKDIR /home/ubuntu

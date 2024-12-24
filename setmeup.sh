@@ -5,8 +5,6 @@ if [[ $(basename `pwd`) != ".dotfiles" ]]; then
     exit 1
 fi
 
-cwd=$(dirname $(realpath $0))
-
 sudo apt install -y ansible
 ansible-playbook -vvv ansible/main.yml -K
 
