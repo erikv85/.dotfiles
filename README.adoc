@@ -1,7 +1,7 @@
-# .dotfiles
+= .dotfiles
 
 Environment stuff. Run `setmeup.sh` to, well, set things up...
 
-## ansible
+== ansible
 
 Run with `ansible-playbook main.yml -K`
