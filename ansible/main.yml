@@ -16,6 +16,14 @@
       - vim
 
   tasks:
+    - name: Update, upgrade and autoremove packages
+      become: yes
+      become_method: sudo
+      apt:
+        update_cache: true
+        upgrade: yes
+        autoremove: true
+
     # If this does not work due to problems with python-apt,
     # use -e ansible_python_interpreter=/usr/bin/python3
     - name: Install apt packages
