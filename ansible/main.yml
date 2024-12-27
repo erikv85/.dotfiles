@@ -68,6 +68,14 @@
       ansible.builtin.shell: |
         curl -s "https://get.sdkman.io" | bash
 
+    - name: Install java ("latest")
+      args:
+        creates: $HOME/.sdkman/candidates/java/
+        executable: /bin/bash
+      ansible.builtin.shell: |
+        . ~/.sdkman/bin/sdkman-init.sh
+        sdk install java
+
     - name: Install sbt
       args:
         creates: $HOME/.sdkman/candidates/sbt/
