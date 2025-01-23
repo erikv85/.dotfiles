@@ -106,3 +106,5 @@
     # set up git
     # set up gh (github cli)
     # install intellij
+
+    # justfile bash completion: just --completions bash > ~/just.bash, then source that file from bashrc
