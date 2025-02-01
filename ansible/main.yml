@@ -96,3 +96,14 @@
     # set up git
     # set up gh (github cli)
     # install intellij
+    # install obsidian
+    # install bitwarden
+    # install brave
+    #
+    # TODO:
+    # install appimagelauncher. it creates launchers for appimages, e.g. obsidian
+    # $ sudo apt install software-properties-common
+    # $ sudo add-apt-repository ppa:appimagelauncher-team/stable
+    # $ sudo apt update
+    # $ sudo apt install appimagelauncher
+    # $ AppImageLauncher ~/bin/obsidian
