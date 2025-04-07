@@ -62,7 +62,10 @@ function gedit {
 alias l1='ls -1'
 
 # disable touchscreen on Thinkpad laptop
-xinput --disable $(xinput | awk '/Touchscreen/ {print $5}' | sed 's/id=\([1-9][0-9]*\)/\1/g')
+if [ -z $WAYLAND_DISPLAY ]; then
+    xinput --disable $(xinput | awk '/Touchscreen/ {print $5}' | sed 's/id=\([1-9][0-9]*\)/\1/g')
+    # else: xinput cannot be used for wayland
+fi
 
 # TODO: obsidian still outputs some garbage
 function obsidian {
