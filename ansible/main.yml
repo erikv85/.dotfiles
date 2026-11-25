@@ -21,7 +21,7 @@
       - gh
 
     sdkman_packages:
-      - { candidate: java, version: "25-tem" }
+      - { candidate: java, version: "25-zulu" }
       - { candidate: sbt, version: "1.11.7" }
       - { candidate: maven, version: "3.8.8" }
 
