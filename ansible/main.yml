@@ -7,7 +7,7 @@
       - curl
       - zip
       - tmux
-      - htop
+      - btop
       - tree
       - jq
       - python-is-python3
