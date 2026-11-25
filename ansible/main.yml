@@ -1,6 +1,9 @@
+
 ---
-- hosts:
-    - '127.0.0.1'
+- name: Configure workstation
+  hosts: localhost
+  connection: local
+  become: false
 
   vars:
     apt_packages:
@@ -17,97 +20,109 @@
       - git
       - gh
 
+    sdkman_packages:
+      - { candidate: java, version: "25-tem" }
+      - { candidate: sbt, version: "1.11.7" }
+      - { candidate: maven, version: "3.8.8" }
+
+    dotfiles:
+      - vimrc
+      - tmux.conf
+
   tasks:
-    - name: Update, upgrade and autoremove packages
-      become: yes
-      become_method: sudo
-      apt:
+    # --------------------------------------------------
+    # System packages
+    # --------------------------------------------------
+
+    - name: Update and upgrade packages
+      become: true
+      ansible.builtin.apt:
         update_cache: true
-        upgrade: yes
+        upgrade: dist
         autoremove: true
+        autoclean: true
+      tags: [packages]
 
-    # If this does not work due to problems with python-apt,
-    # use -e ansible_python_interpreter=/usr/bin/python3
     - name: Install apt packages
-      become: yes
-      become_method: sudo
-      apt:
-        pkg: "{{ apt_packages }}"
-
-    - name: Link vimrc
-      args:
-        chdir: ..
-        creates: $HOME/.vimrc
-      ansible.builtin.shell: |
-        ln -sv `pwd`/.vimrc $HOME/.vimrc
-
-    - name: Create IDEA vimrc
-      args:
-        creates: $HOME/.ideavimrc
-      ansible.builtin.shell: |
-        cp $HOME/.dotfiles/.vimrc $HOME/.ideavimrc
-        # Disable intellij bell
-        echo "set visualbell" >> $HOME/.ideavimrc
-
-    - name: Link tmux conf
-      args:
-        chdir: ..
-        creates: $HOME/.tmux.conf
-      ansible.builtin.shell: |
-        ln -sv `pwd`/.tmux.conf $HOME/.tmux.conf
-
-    - name: Source tobashrc
-      ansible.builtin.lineinfile:
-        path: $HOME/.bashrc
-        line: source $HOME/.dotfiles/.tobashrc
+      become: true
+      ansible.builtin.apt:
+        name: "{{ apt_packages }}"
         state: present
+      tags: [packages]
 
-    - name: Install sdkman
-      args:
-        creates: $HOME/.sdkman/bin/sdkman-init.sh
+    # --------------------------------------------------
+    # Dotfiles
+    # --------------------------------------------------
+
+    - name: Link configuration files
+      ansible.builtin.file:
+        src: "{{ ansible_env.HOME }}/.dotfiles/.{{ item }}"
+        dest: "{{ ansible_env.HOME }}/.{{ item }}"
+        state: link
+        force: true
+      loop: "{{ dotfiles }}"
+      tags: [dotfiles]
+
+    - name: Create IdeaVim configuration
+      ansible.builtin.copy:
+        src: "{{ ansible_env.HOME }}/.dotfiles/.vimrc"
+        dest: "{{ ansible_env.HOME }}/.ideavimrc"
+        remote_src: true
+        force: false
+        mode: '0644'
+      tags: [dotfiles]
+
+    - name: Disable IntelliJ bell
+      ansible.builtin.lineinfile:
+        path: "{{ ansible_env.HOME }}/.ideavimrc"
+        line: "set visualbell"
+        state: present
+      tags: [dotfiles]
+
+    - name: Configure bashrc
+      ansible.builtin.blockinfile:
+        path: "{{ ansible_env.HOME }}/.bashrc"
+        block: |
+          source ~/.dotfiles/.tobashrc
+        marker: "# {mark} ANSIBLE DOTFILES"
+      tags: [dotfiles]
+
+    # --------------------------------------------------
+    # SDKMAN
+    # --------------------------------------------------
+
+    - name: Install SDKMAN
       ansible.builtin.shell: |
         curl -s "https://get.sdkman.io" | bash
-
-    - name: Install java ("latest")
       args:
-        creates: $HOME/.sdkman/candidates/java/
-        executable: /bin/bash
-      ansible.builtin.shell: |
-        . ~/.sdkman/bin/sdkman-init.sh
-        sdk install java
+        creates: "{{ ansible_env.HOME }}/.sdkman/bin/sdkman-init.sh"
+      tags: [sdkman]
 
-    - name: Install sbt
+    - name: Install SDKMAN candidates
+      ansible.builtin.shell: |
+        source "$HOME/.sdkman/bin/sdkman-init.sh"
+        sdk install {{ item.candidate }} {{ item.version }}
       args:
-        creates: $HOME/.sdkman/candidates/sbt/
         executable: /bin/bash
-      ansible.builtin.shell: |
-        . ~/.sdkman/bin/sdkman-init.sh
-        sdk install sbt
+        creates: "{{ ansible_env.HOME }}/.sdkman/candidates/{{ item.candidate }}/{{ item.version }}"
+      loop: "{{ sdkman_packages }}"
+      tags: [sdkman]
 
-    - name: Install mvn
-      args:
-        creates: $HOME/.sdkman/candidates/maven/
-        executable: /bin/bash
-      ansible.builtin.shell: |
-        . ~/.sdkman/bin/sdkman-init.sh
-        sdk install maven 3.8.8
+    # --------------------------------------------------
+    # TODO: Development tools and applications
+    # --------------------------------------------------
 
-    # rip jonathonf
-    #- name: Add vim repository
-    #  become: yes
-    #  become_method: sudo
-    #  ansible.builtin.apt_repository:
-    #    repo: ppa:jonathonf/vim
-    #    state: present
+    # Git configuration
+    # GitHub CLI authentication (manual)
 
-    # TODO:
-    # install java and scala
     # nvm
-    # set up git
-    # set up gh (github cli)
-    # install intellij
 
-    # install bitwarden
-    # install brave
+    # IntelliJ IDEA / JetBrains Toolbox
 
-    # justfile bash completion: just --completions bash > ~/just.bash, then source that file from bashrc
+    # Bitwarden
+
+    # Brave
+
+    # just bash completion:
+    # just --completions bash > ~/just.bash
+
