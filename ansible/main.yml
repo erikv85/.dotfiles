@@ -29,6 +29,8 @@
       - vimrc
       - tmux.conf
 
+    nvm_version: v0.41.0
+
   tasks:
     # --------------------------------------------------
     # System packages
@@ -109,13 +111,54 @@
       tags: [sdkman]
 
     # --------------------------------------------------
+    # NVM / Node.js
+    # --------------------------------------------------
+
+    - name: Install NVM
+      ansible.builtin.shell: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh | bash
+      args:
+        executable: /bin/bash
+        creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+      environment:
+        PROFILE: /dev/null
+      tags: [nvm]
+
+    - name: Configure NVM in bashrc
+      ansible.builtin.blockinfile:
+        path: "{{ ansible_env.HOME }}/.bashrc"
+        block: |
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+        marker: "# {mark} ANSIBLE NVM"
+      tags: [nvm]
+
+    - name: Install Node.js LTS
+      ansible.builtin.shell: |
+        source "$HOME/.nvm/nvm.sh"
+        nvm install --lts
+      args:
+        executable: /bin/bash
+      register: nvm_install_result
+      changed_when: "'already installed' not in nvm_install_result.stdout"
+      tags: [nvm]
+
+    - name: Set default Node.js version
+      ansible.builtin.shell: |
+        source "$HOME/.nvm/nvm.sh"
+        nvm alias default 'lts/*'
+      args:
+        executable: /bin/bash
+      changed_when: false
+      tags: [nvm]
+
+    # --------------------------------------------------
     # TODO: Development tools and applications
     # --------------------------------------------------
 
     # Git configuration
     # GitHub CLI authentication (manual)
-
-    # nvm
 
     # IntelliJ IDEA / JetBrains Toolbox
 
