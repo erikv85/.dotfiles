@@ -19,6 +19,7 @@ set relativenumber
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+" can cause problems in intellij, comment them out if necessary
 inoremap ( ()<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap [ []<Left>
@@ -42,6 +43,8 @@ set wildignore+=**/node_modules/**
 set wildignore+=**/*.class
 
 inoremap <Tab> <Esc>
+" useful mapping when writing in swedish
+noremap Ö :
 
 if filereadable(expand('~/.workvimrc'))
         source ~/.workvimrc

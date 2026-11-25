@@ -14,6 +14,8 @@
       - gnome-tweaks
       - gnome-shell-extensions
       - vim
+      - git
+      - gh
 
   tasks:
     - name: Update, upgrade and autoremove packages
@@ -66,6 +68,14 @@
       ansible.builtin.shell: |
         curl -s "https://get.sdkman.io" | bash
 
+    - name: Install java ("latest")
+      args:
+        creates: $HOME/.sdkman/candidates/java/
+        executable: /bin/bash
+      ansible.builtin.shell: |
+        . ~/.sdkman/bin/sdkman-init.sh
+        sdk install java
+
     - name: Install sbt
       args:
         creates: $HOME/.sdkman/candidates/sbt/
@@ -96,14 +106,8 @@
     # set up git
     # set up gh (github cli)
     # install intellij
-    # install obsidian
+
     # install bitwarden
     # install brave
-    #
-    # TODO:
-    # install appimagelauncher. it creates launchers for appimages, e.g. obsidian
-    # $ sudo apt install software-properties-common
-    # $ sudo add-apt-repository ppa:appimagelauncher-team/stable
-    # $ sudo apt update
-    # $ sudo apt install appimagelauncher
-    # $ AppImageLauncher ~/bin/obsidian
+
+    # justfile bash completion: just --completions bash > ~/just.bash, then source that file from bashrc

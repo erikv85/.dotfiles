@@ -1,0 +1,13 @@
+{
+    "editor.lineNumbers": "relative",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.openFoldersInNewWindow": "on",
+    "workbench.startupEditor": "none",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "files.exclude": {
+        "**/*.swp": true
+    }
+}

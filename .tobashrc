@@ -26,6 +26,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gau="git add -u"
 alias gp="git pull"
+alias gf="git fetch"
 alias gpush="git push"
 alias gdc="git diff --cached"
 alias ga="git add"
@@ -67,11 +68,29 @@ if [ -z $WAYLAND_DISPLAY ]; then
     # else: xinput cannot be used for wayland
 fi
 
-# TODO: obsidian still outputs some garbage
-function obsidian {
-    /usr/bin/obsidian & >/dev/null 2>&1
-    disown $!
-}
+alias pum="python3 ~/pum-aws/pum_aws.py"
 
 # this is to make sure english is used by git, vim, etc...
 export LANG=en_US.UTF-8
+
+if [ -f .nvmrc ]; then
+    nvm use >/dev/null
+fi
+
+# use Ctrl+O to open filename saved in clipboard
+less-clipboard() {
+    local f
+    f=$(xclip -o -selection clipboard 2>/dev/null)
+    f="${f#file://}"
+    f="${f%$'\n'}"
+    f="${f## }"
+    f="${f%% }"
+    if [[ -z "$f" ]]; then
+        printf '\nclipboard is empty\n' >&2
+    elif [[ ! -f "$f" ]]; then
+        printf '\nnot a file: %s\n' "$f" >&2
+    else
+        less "$f"
+    fi
+}
+bind -x '"\C-o": less-clipboard' 2>/dev/null
